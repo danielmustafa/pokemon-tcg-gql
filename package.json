@@ -1,0 +1,17 @@
+{
+  "name": "pokemon-tcg-gql",
+  "version": "1.0.0",
+  "description": "GraphQL integration to Pokemon TCG API",
+  "main": "index.js",
+  "dependencies": {
+    "apollo-datasource-rest": "^0.9.6",
+    "apollo-server": "^2.19.1",
+    "graphql": "^15.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Mustafa",
+  "license": "ISC"
+}
