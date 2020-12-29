@@ -9,7 +9,12 @@ export class PokemonAPI extends RESTDataSource {
     async getCards(args) {
         console.log(args)
         let results = await this.get('v1/cards', args)
-        return results.cards
-                
+        return results.cards           
+    }
+
+    async getSets(args) {
+        console.log(args)
+        let results = await this.get('v1/sets', args)
+        return results.sets
     }
 }

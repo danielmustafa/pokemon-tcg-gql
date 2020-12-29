@@ -46,14 +46,29 @@ type Ability {
     type: String
 }
 
+type Set {
+    name: String
+    ptcgoCode: String
+    series: String
+    totalCards: Int
+    standardLegal: Boolean
+    expandedLegal: Boolean
+    symbolUrl: String
+    logoUrl: String
+}
+
 type Query {
     cards(page: Int, pageSize: Int, name: String, id: String, nationalPokedexNumber: String, types: String, subtype: String, supertype: String, hp: String, number: String, artist: String, rarity: String, series: String, set: String, setCode: String, retreatCost: String, convertedRetreatCost: String, text: String, attackDamage: String, attackCost: String, attackName: String, attackText: String, weaknesses: String, resistances: String, ancientTrait: String, abilityName: String, abilityText: String, abilityType: String, evolvesFrom: String, contains: String): [Card]
+    sets(page: Int, pageSize: Int, name: String, updatedSince: String): [Set]
 }`
 
 const resolvers = {
     Query: { 
         cards: (_source, _args, { dataSources }) => {
             return dataSources.pokemonAPI.getCards(_args)
+        },
+        sets: (_source, _args, { dataSources}) => {
+            return dataSources.pokemonAPI.getSets(_args)
         }
     }
 }
